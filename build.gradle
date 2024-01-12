@@ -1,0 +1,32 @@
+plugins {
+  id 'java'
+  id 'war'
+}
+
+group 'org.goit'
+version '1.0-SNAPSHOT'
+
+repositories {
+  mavenCentral()
+}
+
+ext {
+  junitVersion = '5.9.2'
+  h2Version = '2.2.220'
+  flywayVersion = '9.22.3'
+}
+
+dependencies {
+  compileOnly('javax.servlet:javax.servlet-api:4.0.1')
+  compileOnly 'org.projectlombok:lombok:1.18.24'
+
+  testImplementation("org.junit.jupiter:junit-jupiter-api:${junitVersion}")
+  testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:${junitVersion}")
+  implementation("com.h2database:h2:${h2Version}")
+  implementation("org.flywaydb:flyway-core:${flywayVersion}")
+  implementation("org.flywaydb:flyway-maven-plugin:${flywayVersion}")
+}
+
+test {
+  useJUnitPlatform()
+}
