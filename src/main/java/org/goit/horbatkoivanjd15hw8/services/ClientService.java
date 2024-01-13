@@ -70,8 +70,7 @@ public class ClientService {
       statement = conn.prepareStatement("UPDATE client SET name = ? WHERE id = ?");
       statement.setString(1, name);
       statement.setInt(2, (int) id);
-      statement.addBatch();
-      statement.executeBatch();
+      statement.executeUpdate();
       statement.close();
     } catch (SQLException e) {
       throw new IllegalArgumentException(e);
