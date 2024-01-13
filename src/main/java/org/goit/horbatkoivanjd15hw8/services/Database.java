@@ -8,7 +8,7 @@ import java.sql.SQLException;
 public class Database {
 
   public static final String URL_DB
-      = "C:\\Users\\Ivan\\IdeaProjects\\HorbatkoIvan-JD15-HW8\\src\\main\\resources\\db\\hw8";
+      = "./resources/db/hw8";
   private static final Database INSTANCE = new Database();
   private Connection connection;
 
